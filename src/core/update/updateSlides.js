@@ -98,6 +98,7 @@ export default function updateSlides() {
       return typeof params.breakpoints[key].slidesPerView !== 'undefined';
     }).length > 0;
 
+  console.log(slidesLength);
   for (let i = 0; i < slidesLength; i += 1) {
     slideSize = 0;
     let slide;
@@ -111,6 +112,8 @@ export default function updateSlides() {
       if (shouldResetSlideSize) {
         slides[i].style[getDirectionLabel('width')] = ``;
       }
+      console.log(slides[i]);
+      console.log(slide);
       const slideStyles = getComputedStyle(slide);
       const currentTransform = slide.style.transform;
       const currentWebKitTransform = slide.style.webkitTransform;
